@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-or$qmg&b_aj1hqpd9%93v=7pyy)$w!5z-=hu(x@0^n3m1i4z47
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,11 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'rest_framework',
+    'core',
+    'corsheaders',
+    'django_filters', 
+
 ]
 
+# CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 
+#                         'http://127.0.0.1:3000',
+#             
+# 
+CORS_ALLOW_ALL_ORIGINS = True
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # <-- Add this line here
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,6 +82,7 @@ WSGI_APPLICATION = 'developer_upskill.wsgi.application'
 
 AUTH_USER_MODEL = 'user.CustomUser'
 REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
