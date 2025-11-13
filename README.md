@@ -170,6 +170,3 @@ Frontend runs at: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## ✅ You're all set!
-
-You're ready to run the Developer Upskill Platform locally and start building your own learning ecosystem.
