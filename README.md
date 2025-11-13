@@ -1,4 +1,3 @@
-Developer Upskill Platform
 Welcome to the Developer Upskill Platform, a full-stack web application designed for developers to create, share, and track their learning journeys. This platform allows users to build structured learning paths, add resources, and engage with a community, all while earning XP and badges.
 
 The UI is inspired by modern, tech-focused platforms and features a "pixel-fusion" dark mode theme.
