@@ -1,145 +1,175 @@
-Welcome to the Developer Upskill Platform, a full-stack web application designed for developers to create, share, and track their learning journeys. This platform allows users to build structured learning paths, add resources, and engage with a community, all while earning XP and badges.
+# Developer Upskill Platform
 
-The UI is inspired by modern, tech-focused platforms and features a "pixel-fusion" dark mode theme.
+Welcome to the **Developer Upskill Platform**, a full‑stack web application for developers to **create**, **share**, and **track** their learning journeys. Build structured learning paths, add modular lessons, earn XP, unlock badges, and join a growing community.
 
-![]
+The UI is inspired by modern tech‑centric platforms like **Codedex**, featuring:
 
-## Features
-This platform is a complete Minimal Viable Product (MVP) with a rich feature set for both learners and creators.
+* Pixel‑fusion dark mode theme
+* Interactive WebGL backgrounds
+* Fully responsive design
 
-🧑‍🎓 Learner Features
-Skill Enrollment: Users can browse and enroll in public skills and learning paths.
+---
 
-Personalized Homepage: The dashboard shows "My Current Skills" (in-progress) separately from new "Explore Skills."
+## ✨ Key Features
 
-Structured Learning: Learning Paths feature "skill locking," requiring users to complete prerequisites before moving on.
+A complete, feature‑rich platform for both learners and creators.
 
-Gamification:
+---
 
-XP System: Earn experience points for completing lessons.
+## 🧑‍🎓 Learner Features
 
-Global Leaderboard: Compete with other users for the top spot.
+* **Skill Enrollment:** Browse and enroll in public skills and learning paths.
+* **Personalized Homepage:** Shows "My Current Skills" (with progress bars) and "Explore Skills".
+* **Structured Learning:** Learning Paths enforce prerequisites (e.g., complete "Learn Python" before unlocking "Learn Django").
 
-Badges: Earn unique badges for completing skills.
+### Gamification
 
-Community:
+* **XP System:** Earn XP for completing lessons.
+* **Global Leaderboard:** Compete with other learners.
+* **Badges:** Unlock unique badges.
 
-Comments & Replies: A fully threaded discussion board on each skill page.
+### Community
 
-Reviews & Ratings: Leave a 1-5 star rating and a review after completing a skill.
+* **Comments & Replies:** Fully threaded discussion on each skill.
+* **Reviews & Ratings:** Leave 1–5 star ratings with reviews after completing a skill.
+* **Profile Management:** Update name, bio, avatar.
+* **Skill Forking:** Fork any public skill into a private, editable copy for notes and personal tweaks.
 
-Profile Management: Users can update their name, bio, and avatar on their My Profile page.
+---
 
-Global Search: A powerful search bar to find skills and paths.
+## 🧑‍🏫 Creator Features
 
-🧑‍🏫 Creator Features
-Creator Studio:
+### Creator Studio
 
-Skill Creation: A dedicated "My Skills" dashboard to create, edit, and manage skills.
+* **Skill Creation:** Manage skills with titles, descriptions, visibility (public/private).
+* **Path Creation:** Create learning paths with drag‑and‑drop ordering.
 
-Path Creation: A "My Paths" dashboard to create, edit, and manage learning paths.
+### Structured Content
 
-Module System: Creators can structure their skills by adding "Module Titles" to resources (e.g., "Module 1: Basics," "Module 2: Advanced").
+* **Modules:** Organize resources into clear "chapters".
+* **Resource Management:** Add/edit/delete articles, videos, etc.
+* **Path Management:** Easily reorder skills in a learning path.
+* **Global Search:** Powerful `/api/search/` endpoint.
 
-Skill Forking: Users can "fork" any public skill, creating a private, editable copy in their own dashboard to add personal notes.
+---
 
-Content Management: Creators can add/remove/edit resources and lessons from their skills and paths.
+## 🎨 UI / UX
 
-🎨 UI/UX
-Pixel-Fusion Theme: A "Codedex-style" dark mode UI with a pixel font for headings and a clean sans-serif for body text.
+* **Pixel-Fusion Dark Theme:** Pixel‑style headings, clean sans‑serif body text.
+* **Interactive Login:** GridScan WebGL background using Three.js with mouse‑reactive effects.
+* **Responsive Design:** Mobile‑friendly with a smooth hamburger menu.
 
-Interactive UI: Features include a typing-animation search bar and an interactive GridScan WebGL background on the login page.
+---
 
-Fully Responsive: A mobile-friendly design with a hamburger menu for navigation.
+## 💻 Tech Stack
 
-## Tech Stack
-This project is built with a modern, decoupled architecture.
+### Backend (Django)
 
-Backend:
+* Python 3
+* Django & DRF
+* PostgreSQL (prod) / SQLite (dev)
+* Simple JWT for authentication
 
-Python
+### Frontend (React)
 
-Django & Django Rest Framework (DRF) for the API
+* React (Hooks + Context API)
+* React Router
+* Tailwind CSS
+* Axios with auth interceptors
 
-PostgreSQL (for production, db.sqlite3 for development)
-
-Simple JWT for token-based authentication
-
-Frontend:
-
-React (with Hooks & Context API)
-
-React Router for page navigation
-
-Tailwind CSS for all styling
-
-Axios for API requests
-
-Three.js & face-api.js for the interactive login background
+---
 
 ## 🚀 Setup and Installation
-To run this project locally, you'll need to run the backend (Django) and frontend (React) servers simultaneously.
 
-1. Backend Setup (Django)
-Clone the repository:
+Run backend (Django) and frontend (React) simultaneously.
 
-Bash
+---
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/akashuk2003/Upskill.git)
-cd developer_upskill
-Create and activate a virtual environment:
+# 1. Backend Setup (Django)
 
-Bash
+### Clone the repository
 
-# Windows
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name/backend-folder
+```
+
+### Create and activate virtual environment
+
+#### Windows
+
+```bash
 python -m venv .venv
 .\.venv\Scripts\activate
+```
 
-# macOS / Linux
+#### macOS / Linux
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-Install dependencies: (You will need to create a requirements.txt file first: pip freeze > requirements.txt)
+```
 
-Bash
+### Create `requirements.txt`
 
+```bash
+pip freeze > requirements.txt
+```
+
+### Install dependencies
+
+```bash
 pip install -r requirements.txt
-Run database migrations:
+```
 
-Bash
+### Run migrations
 
+```bash
 python manage.py makemigrations
 python manage.py migrate
-Create a superuser (to access the admin panel):
+```
 
-Bash
+### Create superuser
 
+```bash
 python manage.py createsuperuser
-Run the server:
+```
 
-Bash
+### Run backend server
 
+```bash
 python manage.py runserver
-The backend API will be running at http://127.0.0.1:8000.
+```
 
-2. Frontend Setup (React)
-Navigate to the frontend folder in a new terminal window:
+Backend runs at: **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
 
-Bash
+---
 
-cd developer-upskill-frontend
-Install npm packages:
+# 2. Frontend Setup (React)
 
-Bash
+### Navigate to the frontend folder
 
+```bash
+cd ../frontend-folder
+```
+
+### Install npm packages
+
+```bash
 npm install
-Install missing packages for the WebGL background:
+```
 
-Bash
 
-npm install three postprocessing face-api.js
-Run the app:
+### Run React development server
 
-Bash
-
+```bash
 npm start
-The React development server will open at http://localhost:3000.
+```
+
+Frontend runs at: **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## ✅ You're all set!
+
+You're ready to run the Developer Upskill Platform locally and start building your own learning ecosystem.
