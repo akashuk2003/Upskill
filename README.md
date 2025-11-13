@@ -85,8 +85,8 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name/backend-folder
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/akashuk2003/Upskill.git)
+cd developer_upskill
 Create and activate a virtual environment:
 
 Bash
@@ -126,7 +126,7 @@ Navigate to the frontend folder in a new terminal window:
 
 Bash
 
-cd ../frontend-folder
+cd developer-upskill-frontend
 Install npm packages:
 
 Bash
