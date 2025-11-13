@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework_nested import routers
 from .views import CommentViewSet, GlobalLeaderboardViewSet, GlobalSearchAPIView, LearningPathViewSet, PathEnrollmentViewSet, ReviewViewSet, SkillViewSet, ResourceViewSet, EnrollmentViewSet, LeaderboardViewSet, TagViewSet, UserBadgeViewSet
 
-# Main router for top-level resources
+# Main router
 router = routers.DefaultRouter()
 router.register(r'skills', SkillViewSet, basename='skill')
 router.register(r'resources', ResourceViewSet, basename='resource')
@@ -23,8 +23,6 @@ router.register(r'tags', TagViewSet, basename='tag')
 
 
 
-
-# The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),
     path('', include(skills_router.urls)),

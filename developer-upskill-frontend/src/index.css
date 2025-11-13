@@ -1,3 +1,19 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* MODIFIED: Set the clean font as the default */
+  font-family: 'Inter', sans-serif;
+  /* Set global dark background */
+  background-color: #0f172a; /* Tailwind's bg-slate-900 */
+  color: #a7a7a7; /* pixel-gray-light for default text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* We will apply font-pixel manually in our components */

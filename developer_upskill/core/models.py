@@ -52,6 +52,7 @@ class Resource(models.Model):
     resource_type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='YOUTUBE_VIDEO')
     order = models.PositiveIntegerField(default=0)
     xp = models.PositiveIntegerField(default=10)
+    module_title = models.CharField(max_length=100, blank=True, null=True, help_text="e.g., 'Module 1: Python Basics'")
 
     class Meta:
         ordering = ['order']
